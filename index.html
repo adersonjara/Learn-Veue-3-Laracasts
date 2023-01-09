@@ -3,19 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>VueJs 3</title>
+	<title>Episode 2: Attribute Binding and Basic Events</title>
 	<script src="https://unpkg.com/vue@3"></script>
 </head>
+<style>
+
+	html, body {
+		height: 100%;
+	}
+
+	body{
+		display: grid;
+		place-items: center;
+	}
+
+	.text-red{
+		color: red;
+	}
+
+	.text-green {
+		color: green;
+	}
+
+</style>
 <body>
 	
-	<div id="app">
-		<p>
-			<input type="text" v-model="greeting">
-		</p>
+	<!-- v-bind:class="" -->
+	<!-- es igual a -->
+	<!-- :class="" -->
 
-		<p>
-			{{ greeting }} ({{ greeting.length }})
-		</p>	
+	<!-- v-on:click="" -->
+	<!-- es igual a -->
+	<!-- @click="" -->
+	<div id="app">
+		<button :class="active ? 'text-red' : 'text-green'" @click="toggle">Click Me</button>	
 	</div>
 	
 
@@ -23,14 +44,14 @@
 		Vue.createApp({
 			data() {
 				return {
-					greeting: 'What is up'
+					active: false
 				};
 			},
 
-			mounted() {
-				setTimeout(() => {
-					this.greeting = 'Changed';
-				}, 3000);
+			methods: {
+				toggle() {
+					this.active = ! this.active;
+				}
 			}
 		}).mount('#app');
 	</script>
