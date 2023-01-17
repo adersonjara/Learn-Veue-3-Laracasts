@@ -1,0 +1,7 @@
+Clase 13
+========
+
+npm install json-server --save
+
+1ero creamos la base de datos y ejecutamos este comando
+npx json-server db.json -p 3001
