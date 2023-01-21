@@ -1,4 +1,7 @@
 {
+  "scripts": {
+  	"start": "start npx serve & start npx json-server db.json -p 3001"
+  },
   "dependencies": {
     "json-server": "^0.17.1"
   }
